@@ -9,6 +9,12 @@ class LoadersTestCase(unittest.TestCase):
     def test_something(self):
         operations = yaml_loader(TEST_FILE_PATH)
         self.assertTrue(operations[0].match('get', '/organizations/1'))
+        self.assertTrue(operations[0].match('get', '/organizations/2/'))
+        self.assertFalse(operations[0].match('get', '/organizations/1a'))
+        self.assertFalse(operations[0].match('get', '/organizations/1/1'))
+        self.assertFalse(operations[0].match('get', '/organizations/a'))
+        self.assertFalse(operations[0].match('get', '/organizations/a/'))
+        self.assertFalse(operations[0].match('get', '/organizations/a/1'))
 
 
 if __name__ == '__main__':
