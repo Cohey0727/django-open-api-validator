@@ -2,6 +2,7 @@
 ## For Users
 ### How to install
 ```shell script
+$ pip install django-open-api-validator
 ```
 
 ## For Developers
@@ -10,7 +11,13 @@
 $ pipenv shell
 ```
 
-### How to release
+### Test
+```shell script
+$ pipenv run test
+```
+
+
+### Release
 ```shell script
 $ pipenv run clean
 $ pipenv run package
