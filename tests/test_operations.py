@@ -38,7 +38,7 @@ class LoadersTestCase(unittest.TestCase):
                 "tel": "03-1234-5678",
                 "representative_position": "string",
                 "representative_name": "string",
-                "trial_end_at": "2019-09-30T09:45:49+09:00",
+                "trial_end_at": '',
                 "created_at": "2019-09-30T09:45:49+09:00",
                 "updated_at": "2019-09-30T09:45:49+09:00",
                 "stripe_card_id": "card_1CfLEAE46yzLVzZozvKm6Eik",

@@ -3,7 +3,7 @@ import re
 from typing import Pattern
 
 from django.conf import settings
-from jsonschema import validate
+from jsonschema import validate, draft7_format_checker
 from rest_framework.response import Response
 
 from .path_encoders import create_path_pattern
@@ -37,7 +37,7 @@ class Operation(object):
             errors = getattr(settings, 'OPEN_API_VALIDATOR_ERRORS', 'strict')
 
         schema = self.responses[str(response.status_code)]['content'][response.content_type]['schema']
-        validate(instance=response.data, schema=schema)
+        validate(instance=response.data, schema=schema, format_checker=draft7_format_checker)
 
     def validate_request(self, request):
         pass
