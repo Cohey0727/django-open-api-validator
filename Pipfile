@@ -20,6 +20,7 @@ pyyaml = "*"
 django = ">=2.1"
 djangorestframework = ">=3.0.0"
 jsonschema = ">=3.0.0"
+strict-rfc3339 = "*"
 
 [requires]
 python_version = "3.8"

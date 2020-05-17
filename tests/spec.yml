@@ -87,7 +87,10 @@ paths:
                         type: string
                         nullable: true
                       trial_end_at:
+                        type: string
                         format: date-time
+                        nullable: true
+                        example: '2019-09-30T09:45:49+09:00'
                       created_at:
                         type: string
                         format: date-time
