@@ -7,8 +7,8 @@ TEST_FILE_PATH = f'{os.getcwd()}/tests/spec.yml'
 
 class LoadersTestCase(unittest.TestCase):
     def test_something(self):
-        path = yaml_loader(TEST_FILE_PATH)
-        self.assertEqual(TEST_FILE_PATH, path)
+        operations = yaml_loader(TEST_FILE_PATH)
+        self.assertTrue(operations[0].match('get', '/organizations/1'))
 
 
 if __name__ == '__main__':
