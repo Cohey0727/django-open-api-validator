@@ -1,6 +1,5 @@
 # Django Open Api Validator
-## For Users
-### Usage
+## Usage
 
 - Install django-open-api-validator with pip\
     ```shell script
@@ -27,20 +26,21 @@
     ```
 
 
-## For Developers
-### Get started
-```shell script
-$ pipenv shell
-```
+## Develop
+- Install packages
+    ```shell script
+    $ pipenv shell
+    $ pipenv install
+    ```
 
-### Test
-```shell script
-$ pipenv run test
-```
+- Test
+    ```shell script
+    $ pipenv run test
+    ```
 
-### Release
-```shell script
-$ pipenv run clean
-$ pipenv run package
-$ pipenv run publish
-```
+- Release
+    ```shell script
+    $ pipenv run clean
+    $ pipenv run package
+    $ pipenv run publish
+    ```
