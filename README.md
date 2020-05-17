@@ -6,6 +6,8 @@
     $ pip install drf-open-api-validator
     ```
 
+<br>
+
 - Add django application drf_open_api_validator to INSTALLED_APPS in settings.py
     ```python
     INSTALLED_APPS = [
@@ -14,6 +16,8 @@
         ...
     ]
     ```
+
+<br>
 
 - Add RequestValidatorMiddleware and ResponseValidatorMiddleware to MIDDLEWARE in settings.py
     ```python
@@ -25,6 +29,7 @@
     ]
     ```
 
+----------------------------------------------------------------
 
 ## Develop
 - Install packages
@@ -33,10 +38,14 @@
     $ pipenv install
     ```
 
+<br>
+
 - Test
     ```shell script
     $ pipenv run test
     ```
+
+<br>
 
 - Release
     ```shell script
