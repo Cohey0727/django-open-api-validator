@@ -1,0 +1,2 @@
+class RequestValidatorMiddleware(object):
+    pass
