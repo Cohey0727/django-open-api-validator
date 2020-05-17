@@ -2,7 +2,6 @@ import json
 import os
 import unittest
 
-
 from drf_open_api_validator.core.loaders import yaml_loader
 
 TEST_FILE_PATH = f'{os.getcwd()}/tests/spec.yml'
@@ -46,9 +45,7 @@ class LoadersTestCase(unittest.TestCase):
                 "plan_id": 2
             }
         }
-
         self.operations[0].validate_response(Response(response_data, status=200, content_type='application/json'))
-        self.assertFalse(self.operations[0].match('get', '/organizations/a/1'))
 
 
 if __name__ == '__main__':

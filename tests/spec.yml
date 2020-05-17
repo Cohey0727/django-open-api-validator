@@ -37,77 +37,73 @@ paths:
                     enum:
                       - success
                   data:
-                    $ref: '#/components/schemas/Organization'
-components:
-  schemas:
-    Organization:
-      type: object
-      required:
-        - id
-        - org_code
-        - name
-        - email
-        - is_payment_failed
-        - zip
-        - address
-        - tel
-        - representative_position
-        - representative_name
-        - trial_end_at
-        - created_at
-        - updated_at
-        - stripe_card_id
-        - plan_id
-      properties:
-        id:
-          type: integer
-          format: int64
-          example: 691955718
-        org_code:
-          type: string
-          example: asda
-        name:
-          type: string
-          example: hokan
-        email:
-          type: string
-          example: m.obana@hkn.jp
-        is_payment_failed:
-          type: boolean
-          example: false
-        zip:
-          type: string
-          example: 100-0004
-        address:
-          type: string
-          example: 東京都千代田区大手町1-6-1 4階q
-        tel:
-          type: string
-          example: 03-1234-5678
-        representative_position:
-          type: string
-          nullable: true
-        representative_name:
-          type: string
-          nullable: true
-        trial_end_at:
-          type: string
-          format: date-time
-          nullable: true
-          example: '2019-09-30T09:45:49+09:00'
-        created_at:
-          type: string
-          format: date-time
-          example: '2019-09-30T09:45:49+09:00'
-        updated_at:
-          type: string
-          format: date-time
-          example: '2019-09-30T09:45:49+09:00'
-        stripe_card_id:
-          type: string
-          example: card_1CfLEAE46yzLVzZozvKm6Eik
-        plan_id:
-          type: integer
-          format: int32
-          nullable: true
-          example: 2
+                    type: object
+                    required:
+                      - id
+                      - org_code
+                      - name
+                      - email
+                      - is_payment_failed
+                      - zip
+                      - address
+                      - tel
+                      - representative_position
+                      - representative_name
+                      - trial_end_at
+                      - created_at
+                      - updated_at
+                      - stripe_card_id
+                      - plan_id
+                    properties:
+                      id:
+                        type: integer
+                        format: int64
+                        example: 691955718
+                      org_code:
+                        type: string
+                        example: asda
+                      name:
+                        type: string
+                        example: hokan
+                      email:
+                        type: string
+                        example: m.obana@hkn.jp
+                      is_payment_failed:
+                        type: boolean
+                        example: false
+                      zip:
+                        type: string
+                        example: 100-0004
+                      address:
+                        type: string
+                        example: 東京都千代田区大手町1-6-1 4階q
+                      tel:
+                        type: string
+                        example: 03-1234-5678
+                      representative_position:
+                        type: string
+                        nullable: true
+                      representative_name:
+                        type: string
+                        nullable: true
+                      trial_end_at:
+                        type: string
+                        format: date-time
+                        nullable: true
+                        example: '2019-09-30T09:45:49+09:00'
+                      created_at:
+                        type: string
+                        format: date-time
+                        example: '2019-09-30T09:45:49+09:00'
+                      updated_at:
+                        type: string
+                        format: date-time
+                        example: '2019-09-30T09:45:49+09:00'
+                      stripe_card_id:
+                        type: string
+                        example: card_1CfLEAE46yzLVzZozvKm6Eik
+                      plan_id:
+                        type: integer
+                        format: int32
+                        nullable: true
+                        example: 2

@@ -35,7 +35,9 @@ class Operation(object):
     def validate_response(self, response: Response, errors=None):
         if settings is None:
             errors = getattr(settings, 'OPEN_API_VALIDATOR_ERRORS', 'strict')
-        validate(response.data, self.responses[str(response.status_code)]['content'][response.content_type])
+
+        schema = self.responses[str(response.status_code)]['content'][response.content_type]['schema']
+        validate(instance=response.data, schema=schema)
 
     def validate_request(self, request):
         pass
