@@ -1,4 +1,4 @@
-# pypi_packaging_tutorial
+# Django Open Api Validator
 ## For Users
 ### How to install
 ```shell script
@@ -15,7 +15,6 @@ $ pipenv shell
 ```shell script
 $ pipenv run test
 ```
-
 
 ### Release
 ```shell script

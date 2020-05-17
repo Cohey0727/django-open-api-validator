@@ -17,7 +17,7 @@ test-publish = "python -m twine upload --repository testpypi dist/*"
 wheel = "*"
 twine = "*"
 pyyaml = "*"
-pydash = "*"
+django = ">=2.1"
 
 [requires]
 python_version = "3.8"
