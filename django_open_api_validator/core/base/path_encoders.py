@@ -5,7 +5,7 @@ from ..helpers import find
 
 def path_to_regex(path: str, in_path_parameters, parameters) -> Pattern[str]:
     if not in_path_parameters:
-        return re.compile(path + r'$')
+        return re.compile(f'{path}$')
 
     pattern = path.format(**{
         in_path_parameter:
@@ -14,7 +14,7 @@ def path_to_regex(path: str, in_path_parameters, parameters) -> Pattern[str]:
             )
         for in_path_parameter in in_path_parameters
     })
-    return re.compile(pattern + r'$')
+    return re.compile(f'{pattern}$')
 
 
 type_format_regex_string_map = {
