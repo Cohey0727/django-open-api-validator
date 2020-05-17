@@ -3,7 +3,7 @@ from typing import List
 import yaml
 import re
 
-from django_open_api_validator.core.base.operation import Operation
+from .operation import Operation
 
 __all__ = ['yaml_loader']
 
@@ -16,7 +16,7 @@ def yaml_loader(path_to_yaml: str) -> List[Operation]:
         for path, methods in spec['paths'].items():
             in_path_parameters = re.findall(reg, path)
             res += [
-                Operation(path, method, in_path_parameters, payload.get('parameters'))
+                Operation(spec, path, method, in_path_parameters, payload.get('parameters'), payload.get('responses'))
                 for method, payload in methods.items()
             ]
 

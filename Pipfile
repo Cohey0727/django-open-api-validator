@@ -18,6 +18,8 @@ wheel = "*"
 twine = "*"
 pyyaml = "*"
 django = ">=2.1"
+djangorestframework = ">=3.0.0"
+jsonschema = ">=3.0.0"
 
 [requires]
 python_version = "3.8"

@@ -1,16 +1,16 @@
-# Django Open Api Validator
+# Drf Open Api Validator
 ## Usage
 
 - Install django-open-api-validator with pip\
     ```shell script
-    $ pip install django-open-api-validator
+    $ pip install drf-open-api-validator
     ```
 
-- Add django application django_open_api_validator to INSTALLED_APPS in settings.py
+- Add django application drf_open_api_validator to INSTALLED_APPS in settings.py
     ```python
     INSTALLED_APPS = [
         ...
-        'django_open_api_validator',
+        'drf_open_api_validator',
         ...
     ]
     ```
@@ -19,8 +19,8 @@
     ```python
     MIDDLEWARE = [
         ...
-        'django_open_api_validator.middleware.RequestValidatorMiddleware',
-        'django_open_api_validator.middleware.ResponseValidatorMiddleware',
+        'drf_open_api_validator.middleware.RequestValidatorMiddleware',
+        'drf_open_api_validator.middleware.ResponseValidatorMiddleware',
         ...
     ]
     ```

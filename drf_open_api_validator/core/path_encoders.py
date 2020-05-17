@@ -3,7 +3,7 @@ from typing import Pattern
 from ..helpers import find
 
 
-def path_to_regex(path: str, in_path_parameters, parameters) -> Pattern[str]:
+def create_path_pattern(path: str, in_path_parameters, parameters) -> Pattern[str]:
     if not in_path_parameters:
         return re.compile(f'{path}$')
 
