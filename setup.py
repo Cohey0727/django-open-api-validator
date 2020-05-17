@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="django-open-api-validator",
-    version="0.0.2",
+    version="0.0.4",
     author="Kohei Okamoto",
     author_email="ohayousagi.ac.kook0727@gmail.com",
     description="django-open-api-validator",
