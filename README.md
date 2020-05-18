@@ -1,4 +1,4 @@
-# Drf Open Api Validator
+# DRF Open Api Validator
 ## Usage
 
 - Install django-open-api-validator with pip\
@@ -28,6 +28,27 @@
         ...
     ]
     ```
+
+
+## Settings.py
+
+| Parameter | Type | Default |
+| --------- | ---- | ------- |
+| DRF_OAV_SERVER_URL | str | '' |
+| DRF_OAV_LOG_LEVEL | 'ignore' or 'info' or 'waring' or 'error' or 'exception' | 'waring' |
+| DRF_OAV_SCHEMA_FILE_PATH | str | '' |  |
+
+### DRF_OAV_SERVER_URL
+Prefix of url. The details are as follows.  
+[Swagger API Server and Base URL](https://swagger.io/docs/specification/api-host-and-base-path/)
+ 
+### DRF_OAV_LOG_LEVEL
+When 'info' or 'waring' or 'error', logging each level.<br>
+When 'ignore', no check schema.<br>
+When 'exception', raise exception.<br> 
+
+### DRF_OAV_SCHEMA_FILE_PATH
+Path of schema file
 
 ----------------------------------------------------------------
 
