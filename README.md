@@ -23,8 +23,7 @@
     ```python
     MIDDLEWARE = [
         ...
-        'drf_open_api_validator.middleware.RequestValidatorMiddleware',
-        'drf_open_api_validator.middleware.ResponseValidatorMiddleware',
+        'drf_open_api_validator.middleware.SchemaValidatorMiddleware',
         ...
     ]
     ```

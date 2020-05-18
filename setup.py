@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="drf-open-api-validator",
-    version="0.0.4",
+    version="0.0.5",
     author="Kohei Okamoto",
     author_email="ohayousagi.ac.kook0727@gmail.com",
     description="drf-open-api-validator",
