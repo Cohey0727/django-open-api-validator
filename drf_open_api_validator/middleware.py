@@ -6,12 +6,10 @@ from collections import defaultdict
 
 from django.http import HttpRequest
 
-from drf_open_api_validator.core.errors import SchemaUndefined
+from drf_open_api_validator.core.exceptions import SchemaUndefined, exception_handler
 from drf_open_api_validator.core.loaders import load_schema_from_yaml
 from drf_open_api_validator.core.operation import Operation
 from drf_open_api_validator.helpers import find
-
-logger = logging.getLogger(__name__)
 
 
 class SchemaValidatorMiddleware(object):
@@ -22,30 +20,19 @@ class SchemaValidatorMiddleware(object):
 
     def __call__(self, request: HttpRequest):
         operation = self.get_operation(request)
-        self.validate_request(request, operation)
+        operation and operation.validate_request(request)
         response = self.get_response(request)
-        self.validate_response(response, operation)
+        operation and operation.validate_response(response)
         return response
 
+    @exception_handler
     def get_operation(self, request: HttpRequest) -> Operation:
         operation = find(
             self.operations,
             lambda _operation: _operation.match(request.method, request.get_full_path(force_append_slash=True))
         )
-        # if operation is None:
-        #     raise SchemaUndefined(request)
+
+        if operation is None:
+            raise SchemaUndefined(request)
 
         return operation
-
-    @staticmethod
-    def validate_request(request: HttpRequest, operation: Operation):
-        pass
-
-    @staticmethod
-    def validate_response(response, operation):
-        try:
-            operation.validate_response(response)
-        except SchemaUndefined as e:
-            logger.error(e)
-        except Exception as e:
-            logger.error(e)

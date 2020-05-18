@@ -3,11 +3,13 @@ from typing import List
 import yaml
 import re
 
+from .exceptions import exception_handler
 from .operation import Operation
 
 __all__ = ['load_schema_from_yaml']
 
 
+@exception_handler
 def load_schema_from_yaml(path_to_yaml: str) -> List[Operation]:
     res = []
     with open(path_to_yaml, 'r') as file:
