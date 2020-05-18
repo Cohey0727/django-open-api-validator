@@ -1,16 +1,19 @@
 import os
 import unittest
 
-from drf_open_api_validator.core.loaders import yaml_loader
+from django.http import HttpRequest
+
+from drf_open_api_validator.core.loaders import load_schema_from_yaml
 
 TEST_FILE_PATH = f'{os.getcwd()}/tests/spec.yml'
 
 
 class LoadersTestCase(unittest.TestCase):
     def setUp(self) -> None:
-        self.operations = yaml_loader(TEST_FILE_PATH)
+        self.operations = load_schema_from_yaml(TEST_FILE_PATH)
 
     def test_match(self):
+        request = HttpRequest()
         self.assertTrue(self.operations[0].match('get', '/organizations/1'))
         self.assertTrue(self.operations[0].match('get', '/organizations/2/'))
         self.assertFalse(self.operations[0].match('get', '/organizations/1a'))

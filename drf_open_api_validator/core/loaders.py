@@ -5,10 +5,10 @@ import re
 
 from .operation import Operation
 
-__all__ = ['yaml_loader']
+__all__ = ['load_schema_from_yaml']
 
 
-def yaml_loader(path_to_yaml: str) -> List[Operation]:
+def load_schema_from_yaml(path_to_yaml: str) -> List[Operation]:
     res = []
     with open(path_to_yaml, 'r') as file:
         reg = r'(?<={).*?(?=})'
