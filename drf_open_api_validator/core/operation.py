@@ -19,18 +19,18 @@ class Operation(object):
             path += '/'
 
         self.root = root
-        self.path = path
+        self.path = f'{getattr(settings, "DRF_OAV_SERVER_URL", "")}/{path}'
         self.method = method.lower()
         self.in_path_parameters = in_path_parameters
         self.parameters = parameters
         self.responses = responses
         self.path_pattern = create_path_pattern(path, in_path_parameters, parameters)
 
-    def match(self, method: str, path: str) -> bool:
-        if not path.endswith('/'):
-            path += '/'
+    def match(self, method: str, full_path: str) -> bool:
+        if not full_path.endswith('/'):
+            full_path += '/'
 
-        return method.lower() == self.method and self.path_pattern.match(path) is not None
+        return method.lower() == self.method and self.path_pattern.match(full_path) is not None
 
     def validate_response(self, response: Response, errors=None):
         if settings is None:
